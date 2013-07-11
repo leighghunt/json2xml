@@ -45,7 +45,12 @@ namespace json2xml
 
                     if (sender == txtJSON)
                     {
-                        txtEmbeddedJSON.Text = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.None).Replace("\"", "'");
+                        string embeddedJSON = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.None);
+                        embeddedJSON = embeddedJSON.Replace("\"", "'");
+                        embeddedJSON = embeddedJSON.Replace("&", "&amps;");
+                        embeddedJSON = embeddedJSON.Replace("<", "&lt;");
+                        embeddedJSON = embeddedJSON.Replace(">", "&gt;");
+                        txtEmbeddedJSON.Text = embeddedJSON;
                     }
 
                     if (sender == txtEmbeddedJSON)
@@ -67,6 +72,7 @@ namespace json2xml
         private void Form1_Load(object sender, EventArgs e)
         {
             lblErrorMessage.Text = "";
+            txtEmbeddedJSON.Text = "[{'A':1,'B':2}]";
         }
     }
 }
