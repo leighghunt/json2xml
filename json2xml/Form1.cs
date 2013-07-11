@@ -55,7 +55,12 @@ namespace json2xml
 
                     if (sender == txtEmbeddedJSON)
                     {
-                        txtJSON.Text = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+                        string JSON = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+                        JSON = JSON.Replace("'", "\"");
+                        JSON = JSON.Replace("&amps;", "&");
+                        JSON = JSON.Replace("&lt;", "<");
+                        JSON = JSON.Replace("&gt;", ">");
+                        txtJSON.Text = JSON;
                     }
                 }
                 lblErrorMessage.Text = "";

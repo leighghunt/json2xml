@@ -62,7 +62,8 @@
             this.txtJSON.Location = new System.Drawing.Point(111, 13);
             this.txtJSON.Multiline = true;
             this.txtJSON.Name = "txtJSON";
-            this.txtJSON.Size = new System.Drawing.Size(357, 250);
+            this.txtJSON.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtJSON.Size = new System.Drawing.Size(357, 224);
             this.txtJSON.TabIndex = 2;
             this.txtJSON.TextChanged += new System.EventHandler(this.txtJSON_TextChanged);
             // 
@@ -72,6 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmbeddedJSON.Location = new System.Drawing.Point(111, 243);
             this.txtEmbeddedJSON.Name = "txtEmbeddedJSON";
+            this.txtEmbeddedJSON.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtEmbeddedJSON.Size = new System.Drawing.Size(357, 20);
             this.txtEmbeddedJSON.TabIndex = 3;
             this.txtEmbeddedJSON.TextChanged += new System.EventHandler(this.txtEmbeddedJSON_TextChanged);
